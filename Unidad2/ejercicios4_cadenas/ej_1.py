@@ -21,21 +21,41 @@ def validate(key):
     else:
         return False
 
-     
+def process_key(key):
+    return processed
+
+def perm1(msg, key):
+    for i in msg:
+        
+    return 
+
 def encryption( msg, key ): 
     # msg es el texto plano a encriptar 
     # key es la clave a uƟlizar para encriptar
     # devuelve msg cifrado según key. 
     if validate(key):
-        
-        return code
+        msg = perm1(msg, key)
+        msg = perm2(msg, key)
+        msg = perm3(msg, key)
+        msg = perm4(msg, key)
+        return msg
     else:
         return "La clave no es correcta"
-def decoded (code, key):
-    # code es el texto cifrado a desencriptar 
+
+def decoded (msg, key):
+    # msg es el texto cifrado a desencriptar 
     # key es la clave a uƟlizar para desencriptar 
-    # devuelve code decodificado según key.
-    return ""
+    # devuelve msg decodificado según key.
+    if validate(key):
+        msg = desperm1(msg, key)
+        msg = desperm2(msg, key)
+        msg = desperm3(msg, key)
+        msg = desperm4(msg, key)
+        return msg
+    else:
+        return "La clave no es correcta"
+    
+    
 print(validate("hola"))
 print(validate("Hola"))
 print(validate("hHola1234"))
