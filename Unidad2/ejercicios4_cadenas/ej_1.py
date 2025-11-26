@@ -5,8 +5,53 @@ caso contrario decimos que la criptograİa es simétrica.
 Pide al usuario que ingrese la clave a utlizar. 
 
 El resultado 
-obtenido debe ser diferente si la clave es diferente. 
+obtenido debe ser diferente si la clave es diferente. 
+
 '''
+
+#suma los el codigo de los caracteres de la clave
+#despues se lo suma a cada caracter de la cadena  y lo divide entre 128    
+def perm1(msg, key):
+    suma = 0
+    for char in key: #calcular el numero a sumar a partir de la clave
+        suma += ord(char)
+    msg = list(msg)
+    msgcode = []
+    for i in msg: #modificar el mensaje
+        i = chr( (ord(i) + suma) % 128 )
+        msgcode.append(i)
+    return "".join(msgcode)
+
+#suma los el codigo de los caracteres de la clave
+#despues se lo resta a cada caracter de la cadena y lo divide entre 128    
+def desperm1(msg, key):
+    suma = 0
+    for char in key: #calcular el numero a sumar a partir de la clave
+        suma += ord(char)
+    
+    msg = list(msg)
+    msgcode = []
+    for i in msg: #modificar el mensaje
+        i = chr( (ord(i) - suma) % 128 )
+        msgcode.append(i)
+    return "".join(msgcode)
+
+def perm2(msg, key):
+    msg = list(msg)
+    msgcode = ""
+    for i in range(0, len(msg), 2):
+        msg[i], msg[i+1] = msg[i+1], msg[i]
+    return "".join(msg)
+
+def desperm2(msg, key):
+    msg = list(msg)
+    msgcode = ""
+    for i in range(0, len(msg), 2):
+        msg[i], msg[i+1] = msg[i+1], msg[i]
+    return "".join(msg)
+
+
+
 
 def validate(key):
     #La longitud de la clave no debe ser menor que 15 caracteres 
@@ -21,13 +66,6 @@ def validate(key):
     else:
         return False
 
-def process_key(key):
-    return processed
-
-def perm1(msg, key):
-    for i in msg:
-        
-    return 
 
 def encryption( msg, key ): 
     # msg es el texto plano a encriptar 
@@ -36,8 +74,8 @@ def encryption( msg, key ):
     if validate(key):
         msg = perm1(msg, key)
         msg = perm2(msg, key)
-        msg = perm3(msg, key)
-        msg = perm4(msg, key)
+        #msg = perm3(msg, key)
+        #msg = perm4(msg, key)
         return msg
     else:
         return "La clave no es correcta"
@@ -49,15 +87,16 @@ def decoded (msg, key):
     if validate(key):
         msg = desperm1(msg, key)
         msg = desperm2(msg, key)
-        msg = desperm3(msg, key)
-        msg = desperm4(msg, key)
+        #msg = desperm3(msg, key)
+        #msg = desperm4(msg, key)
         return msg
     else:
         return "La clave no es correcta"
-    
-    
-print(validate("hola"))
-print(validate("Hola"))
-print(validate("hHola1234"))
-print(validate("Hoooooooooola1234#"))
+
+mensaje = "quiero mucho al ronnie"
+key = "Carmen123456789!"
  
+print(encryption(mensaje, key))
+code = encryption(mensaje, key)
+print(decoded(code, key))
+
