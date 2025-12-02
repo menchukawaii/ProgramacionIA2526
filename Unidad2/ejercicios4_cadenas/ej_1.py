@@ -50,9 +50,34 @@ def desperm2(msg, key):
         msg[i], msg[i+1] = msg[i+1], msg[i]
     return "".join(msg)
 
+def perm3(msg, key):
+    n = ord(min(key))
+    code = ''
+    for i in msg:
+        code += chr((ord(i) - n) % 128)
+    return code
 
+def desperm3(msg, key):
+    n = ord(min(key))
+    code = ''
+    for i in msg:
+        code += chr((ord(i) + n) % 128)
+    return code
 
+def perm4(msg, key):
+    n = len(key) + 33
+    code = ''
+    for i in msg:
+        code += chr((ord(i) + n) % 128)
+    return code
 
+def desperm4(msg, key):
+    n = len(key) + 33
+    code = ''
+    for i in msg:
+        code += chr((ord(i) - n) % 128)
+    return code
+    
 def validate(key):
     #La longitud de la clave no debe ser menor que 15 caracteres 
     #y debe contener mayúsculas, minúsculas, dígitos y caracteres especiales.
@@ -74,8 +99,8 @@ def encryption( msg, key ):
     if validate(key):
         msg = perm1(msg, key)
         msg = perm2(msg, key)
-        #msg = perm3(msg, key)
-        #msg = perm4(msg, key)
+        msg = perm3(msg, key)
+        msg = perm4(msg, key)
         return msg
     else:
         return "La clave no es correcta"
@@ -87,16 +112,38 @@ def decoded (msg, key):
     if validate(key):
         msg = desperm1(msg, key)
         msg = desperm2(msg, key)
-        #msg = desperm3(msg, key)
-        #msg = desperm4(msg, key)
+        msg = desperm3(msg, key)
+        msg = desperm4(msg, key)
         return msg
     else:
         return "La clave no es correcta"
-
-mensaje = "quiero mucho al ronnie"
-key = "Carmen123456789!"
+    
+'''
+mensaje = input("Introduce el mensaje")
+key = input("Introduce la clave")
  
 print(encryption(mensaje, key))
 code = encryption(mensaje, key)
 print(decoded(code, key))
+'''
 
+MENSAJES = [
+    "Hola mundo! Estamos probando la criptografia.",
+    "El cifrado es una herramienta esencial.",
+    "Otro mensaje corto.",
+    "Mensaje con acentos áéíóúÁÉÍÓÚñÑ" # Puede causar problemas si los acentos exceden 127, pero el sistema usa ord() y chr()
+]
+
+CLAVES_VALIDAS = [
+    "Clave_1_MuySegura!@#$54321",
+    "PruebaSegura123%abcdefghij"
+]
+
+CLAVE_INVALIDA = "clave_corta!1"
+
+for i in len(MENSAJES):
+    print(f"Mensaje a encriptar: {MENSAJES[i]}")
+    print(f"Clave: {CLAVES_VALIDAS[0]}")
+    encriptado = encryption(MENSAJES[i], CLAVES_VALIDAS[0])
+    print(f"Mensaje encriptado: {encriptado}")
+    print(f"Mensaje desencriptado: {encryption(MENSAJES[i], CLAVES_VALIDAS[0])}")
