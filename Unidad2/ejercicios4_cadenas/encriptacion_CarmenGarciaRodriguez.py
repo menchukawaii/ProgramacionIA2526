@@ -193,9 +193,9 @@ def decoded (msg, key):
 '''
 
 MENSAJES = [
-    "Hola mundo! Estamos probando la criptografia.",
+    "Hola mundo! Estamos probando la criptografiaa.",
     "El cifrado es una herramienta esencial.",
-    "Otro mensaje corto.",
+    "aa.",
     "Mensaje con acentos áéíóúÁÉÍÓÚñÑ" 
 ]
 
