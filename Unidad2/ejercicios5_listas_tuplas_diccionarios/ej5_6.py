@@ -27,9 +27,9 @@ registro_estudiantes = {
         ("inglés", True, "malo")
     ],
     "Carlos López": [
-        ("matemáticas", True, "bueno"),
+        ("matemáticas", True, "malo"),
         ("lengua", False, "malo"),
-        ("historia", True, "regular"),
+        ("historia", False, "malo"),
         ("inglés", True, "bueno")
     ],
     "Elena Torres": [
@@ -43,14 +43,16 @@ registro_estudiantes = {
 def calcular_porcentaje_asistencia(datos_estudiante):
     porcentaje_asistencia = 0
     for asignatura in datos_estudiante:
-        porcentaje_asistencia +1 if asignatura[1]==True else porcentaje_asistencia
+        if asignatura[1] == True:
+            porcentaje_asistencia +=1 
     return porcentaje_asistencia / len(datos_estudiante)
 
 def evaluar_comportamiento(datos_estudiante):
     porcentaje = 0
     comportamiento = ""
     for asignatura in datos_estudiante:
-        porcentaje +1 if asignatura[2]=="malo" else porcentaje
+        if asignatura[2]=="malo":
+            porcentaje += 1 if asignatura[2]=="malo" else porcentaje
     porcentaje = porcentaje/ len(datos_estudiante)
     comportamiento = "malo" if porcentaje >= 0.5 else "aceptable"
     return comportamiento
@@ -60,12 +62,15 @@ def crear_registro_actualizado(registro_estudiantes):
     for key, value in registro_estudiantes.items():
         nuevo_registro[key] = [
             calcular_porcentaje_asistencia(value),
-            evaluar_comportamiento[value]
+            evaluar_comportamiento(value)
             ]
     return nuevo_registro
         
 
 print(crear_registro_actualizado(registro_estudiantes))
+
+
+
 
 
 
