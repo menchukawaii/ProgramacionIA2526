@@ -4,9 +4,9 @@ try:
 
 
     # Abre el stream
-    stream = open("prim.txt", mode = "rt")
+    #stream = open("prim.txt", mode = "rt") # busca en / de la carpeta en la que estoy, osea ProgramacionIA2526
+    stream = open("Unidad2/ejercicios10_ficheros/ej10_2/carmen.txt", "rt")
     #Realiza el tratamiento del archivo
-    print(stream.read())
     caracter = stream.read(1)
     contador = 0
     while caracter != "":
