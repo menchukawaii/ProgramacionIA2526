@@ -1,0 +1,7 @@
+Ana Mena 6.5
+Carlos Vives 4
+Sergio Ramos 7
+Carlos Vives 7
+Ana Mena 8
+Sergio Ramos 6
+Ana Mena 7.5
