@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bienvenido al sistema de gestión de seguidores</h1>
+
+    <input type="text" name="username" id="username" placeholder="Nombre del seguidor">
+    <input type="button" value="añadir" onclick="addFollower()">
+    <input type="button" value="eliminar" onclick="removeFollower()">
+    <input type="button" value="mostrar" onclick="showFollowers()">
+    <input type="button" value="buscar" onclick="searchFollower()">
+    <input type="button" value="salir" onclick="exit()">
+
+    <ul id="followerList"></ul>
+</body>
+<script>
+    // let followers = [];
+
+    // function addFollower() {
+    //     let name = prompt("Introduce el nombre del seguidor:");
+    //     if (name) {
+    //         followers.push(name);
+    //         alert("Seguidor añadido.");
+    //     }
+    // }
+
+    // function removeFollower() {
+    //     let name = prompt("Introduce el nombre del seguidor a eliminar:");
+    //     followers = followers.filter(follower => follower !== name);
+    //     alert("Seguidor eliminado.");
+    // }
+
+    // function showFollowers() {
+    //     const followerList = document.getElementById("followerList");
+    //     followerList.innerHTML = "";
+    //     followers.forEach(follower => {
+    //         const li = document.createElement("li");
+    //         li.textContent = follower;
+    //         followerList.appendChild(li);
+    //     });
+    // }
+
+    // function searchFollower() {
+    //     let name = prompt("Introduce el nombre del seguidor a buscar:");
+    //     if (followers.includes(name)) {
+    //         alert("El seguidor " + name + " está en la lista.");
+    //     } else {
+    //         alert("El seguidor " + name + " no está en la lista.");
+    //     }
+    // }
+
+    // function exit() {
+    //     alert("Saliendo del sistema.");
+    // }
+</script>
+<script>
+    const followers = new Set();
+    
+    function addFollower() {
+        let username = document.getElementById("username").value.trim();
+        if (followers.has(username)) {
+            alert("El seguidor " + username + " ya está en la lista.");
+        } else {
+            followers.add(username);
+            alert("Seguidor añadido.");
+        }
+    }
+
+    function removeFollower() {
+        let username = document.getElementById("username").value.trim();
+        if (followers.has(username)) {
+            followers.delete(username);
+            alert("Seguidor eliminado.");
+        } else {
+            alert("El seguidor " + username + " no está en la lista.");
+        }
+    }
+
+    function showFollowers() {
+        const followerList = document.getElementById("followerList");
+        followerList.innerHTML = "";
+        followers.forEach(follower => {
+            const li = document.createElement("li");
+            li.textContent = follower;
+            followerList.appendChild(li);
+        });
+    }
+
+    function searchFollower() {
+        let username = document.getElementById("username").value.trim();
+        if (followers.has(username)) {
+            alert("El seguidor " + username + " está en la lista.");
+        } else {
+            alert("El seguidor " + username + " no está en la lista.");
+        }
+    }
+
+    function exit() {
+        alert("Saliendo del sistema.");
+    }
+</script>
+</html>

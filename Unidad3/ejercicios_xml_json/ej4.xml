@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+    <empleado>
+        <nombre>Juan</nombre>
+        <apellido>Pérez</apellido>
+        <edad>30</edad>
+        <fecha_nacimiento>1991-01-01</fecha_nacimiento>
+        <puesto>Desarrollador</puesto>
+        <departamento>Tecnología</departamento>
+    </empleado>
+    <empleado>
+        <nombre>Carmen</nombre>
+        <apellido>Pérez</apellido>
+        <edad>30</edad>
+        <fecha_nacimiento>1991-01-01</fecha_nacimiento>
+        <puesto>Desarrollador</puesto>
+        <departamento>Tecnología</departamento>
+    </empleado>
+</empleados>

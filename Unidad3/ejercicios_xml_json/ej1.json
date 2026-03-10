@@ -1,0 +1,31 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Laptop",
+      "categoria": "Electrónica",
+      "precio_eur": 800,
+      "stock": 15,
+      "fabricante": "HP",
+      "peso_kg": 2.5
+    },
+    {
+      "id": 2,
+      "nombre": "Smatphone",
+      "categoria": "Electrónica",
+      "precio_eur": 500,
+      "stock": 20,
+      "fabricante": "Samsung",
+      "peso_kg": 0.3
+    },
+    {
+      "id": 3,
+      "nombre": "Python",
+      "categoria": "Libros",
+      "precio_eur": 20,
+      "stock": 50,
+      "fabricante": "Garceta",
+      "peso_kg": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "empleados": [
+        {
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "edad": 30,
+            "fecha_nacimiento": "1991-01-01",
+            "puesto": "Desarrollador",
+            "departamento": "Tecnología"
+        },
+        {
+            "nombre": "Carmen",
+            "apellido": "Pérez",
+            "edad": 30,
+            "fecha_nacimiento": "1991-01-01",
+            "puesto": "Desarrollador",
+            "departamento": "Tecnología"
+        }
+    ]
+}
