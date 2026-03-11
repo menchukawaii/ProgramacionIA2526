@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload = function(){
+        let ancho = prompt("Introduce el ancho de la caja:");
+        while (ancho != Number(ancho)){
+            ancho = prompt("Introduce un número válido para el ancho:");
+        }
+        let alto = prompt("Introduce el alto de la caja:");
+        while (alto != Number(alto)){
+            alto = prompt("Introduce un número válido para el alto:");
+        }
+        let largo = prompt("Introduce el largo de la caja:");
+        while (largo != Number(largo)){
+            largo = prompt("Introduce un número válido para el largo:");
+        }
+        let volumen = ancho * alto * largo;
+        alert("El volumen de la caja es: " + volumen);
+    }
+</script>
+</html>

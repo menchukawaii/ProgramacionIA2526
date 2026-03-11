@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload = function() {
+        let num1 = prompt("Introduce el primer número:");
+        let num2 = prompt("Introduce el segundo número:");
+        let operacion = prompt("Introduce la operación a realizar (+, -, *, /):");
+        switch(operacion) {
+            case "+":
+                alert("El resultado de " + num1 + " + " + num2 + " es: " + (Number(num1) + Number(num2)));
+                break;
+            case "-":
+                alert("El resultado de " + num1 + " - " + num2 + " es: " + (Number(num1) - Number(num2)));
+                break;
+            case "*":
+                alert("El resultado de " + num1 + " * " + num2 + " es: " + (Number(num1) * Number(num2)));
+                break;
+            case "/":
+                if(num1 == "0" || num2 == "0") {
+                    alert("No se puede dividir por cero.");
+                } else {
+                    alert("El resultado de " + num1 + " / " + num2 + " es: " + (Number(num1) / Number(num2)));
+                }
+                break;
+            default:
+                alert("Operación no válida.");
+        }
+    }
+</script>
+</html>
