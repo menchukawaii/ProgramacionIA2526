@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function esPrimo(num) {
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    const esPrimo = n => {
+        for (let i = 2, s = Math.sqrt(n); i <= s; i++)
+            if (n % i === 0) return false;
+        return n > 1;
+    };
+
+    // Por qué: Si un número tiene un divisor mayor que su raíz cuadrada, 
+    // obligatoriamente debe tener otro divisor menor que ella para que el 
+    // producto dé $n$.
+
+    // Ejemplo: Para n = 100, la raíz es 10.Si intentas dividir por 
+    // 20(que es > 10$), el resultado es 5(que es < 10$).
+    // Como ya probamos los números pequeños primero, no hace falta llegar 
+    // hasta los grandes.
+</script>
+
+</html>

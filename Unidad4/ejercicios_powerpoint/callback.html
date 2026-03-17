@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let ejecuta = (callback, a, b) => callback(a, b)
+
+    let suma = (a, b) => {
+        return (Number(a) && Number(b)) ? Number(a) + Number(b) : "Error: ambos parámetros deben ser números.";
+    }
+
+    let resta = (a, b) => {
+        return (Number(a) && Number(b)) ? Number(a) - Number(b) : "Error: ambos parámetros deben ser números.";
+    }
+
+    console.log(ejecuta(suma, 2,3))
+    console.log(ejecuta(resta, 5,3))
+
+</script>
+</html>

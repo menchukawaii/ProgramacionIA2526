@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = []
+    function f(){
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.floor(Math.random()*101)
+        }
+        arr.sort((a,b) => {
+
+            const aTerminaEn0 = a % 10 === 0;
+            const bTerminaEn0 = b % 10 === 0;
+
+            if (aTerminaEn0 && !bTerminaEn0) return -1; // a va primero
+            if (!aTerminaEn0 && bTerminaEn0) return 1;  // b va primero
+            return 0; // Mantener orden relativo si ambos terminan en 0 o ninguno
+        })
+    }
+</script>
+</html>
