@@ -1,15 +1,15 @@
 ## FACTORIAL DE UN NÚMERO (n)
 
-def factorial(num):
-    factorial = 1
-    if num == 0 or num == 1:
-        return 1
-    elif num > 0:
-        for i in range(num, 0, -1):
-            factorial *= i
-    else:
-        return "No se puede calcular"
-    return factorial
+# def factorial(num):
+#     factorial = 1
+#     if num == 0 or num == 1:
+#         return 1
+#     elif num > 0:
+#         for i in range(num, 0, -1):
+#             factorial *= i
+#     else:
+#         return "No se puede calcular"
+#     return factorial
 
 
 def factorial_recursivo(num):

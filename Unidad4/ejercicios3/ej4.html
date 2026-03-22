@@ -9,8 +9,15 @@
     
 </body>
 <script>
-    function operar(args){
+    function operacionesVariables(...nums) {
+        if (nums.length < 4) return "Se requieren al menos 4 números"; 
         
+        const suma = nums.reduce((a, b) => a + b, 0); 
+        const media = suma / nums.length; 
+        const multPrimeroUltimo = nums[0] * nums[nums.length - 1]; 
+        const divSegundoPenultimo = nums[1] / nums[nums.length - 2]; 
+        
+        return { suma, media, multPrimeroUltimo, divSegundoPenultimo };
     }
 </script>
 </html>

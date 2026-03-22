@@ -11,11 +11,13 @@
 <script>
     const fibonacci = [0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , 89 , 144 , 233 , 377 , 610 , 987 , 1597]
 
-    const suma3 = []
-    function sumarFibonacci(i){
-        if (i == 3){
-            
-        }
-    }
+function tribonacci(n) {
+    if (n <= 2) return 0;
+    if (n === 3) return 1;
+    return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3); 
+}
+
+// Ejemplo para mostrar los primeros 10 términos 
+for(let i = 1; i <= 10; i++) console.log(tribonacci(i));
 </script>
 </html>
