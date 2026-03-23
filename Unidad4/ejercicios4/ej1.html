@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const productos = [
+        { nombre: "Monitor 27 Pulgadas", precio: 350, categoria: "Electrónica", stock: 15 },
+        { nombre: "Teclado Mecánico RGB", precio: 85, categoria: "Periféricos", stock: 0 },
+        { nombre: "Silla Gaming Pro", precio: 220, categoria: "Muebles", stock: 5 },
+        { nombre: "Mouse Inalámbrico", precio: 45, categoria: "Periféricos", stock: 25 },
+        { nombre: "Laptop Ultra Slim", precio: 1200, categoria: "Electrónica", stock: 8 },
+        { nombre: "Escritorio Elevable", precio: 450, categoria: "Muebles", stock: 3 },
+        { nombre: "Auriculares Noise Cancelling", precio: 180, categoria: "Audio", stock: 12 },
+        { nombre: "Lámpara LED Escritorio", precio: 30, categoria: "Iluminación", stock: 20 },
+        { nombre: "Webcam 4K", precio: 110, categoria: "Electrónica", stock: 0 },
+        { nombre: "Pad para Mouse XL", precio: 15, categoria: "Periféricos", stock: 50 }
+    ];
+
+    function ordenarMayorMenorProductosConStock(productos){
+        conStock = productos.filter(p => p.stock > 0);
+        ordenado = conStock.sort((a,b) => b.precio - a.precio);
+    }
+    ordenarMayorMenorProductosConStock(productos)
+</script>
+
+</html>
