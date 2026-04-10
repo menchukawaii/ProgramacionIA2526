@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista"></ul>
+    <script>
+        const cuadros = [
+            {
+                titulo: "mona lisa",
+                autor: "leonardo da vinci",
+                year: 1503
+            },
+            {
+                titulo: "la ultima cena",
+                autor: "leonardo da vinci",
+                year: 1495
+            },
+            {
+                titulo: "noche estrellada",
+                autor: "van gogh",
+                year: 1889
+            },
+            {
+                titulo: "el grito",
+                autor: "edward munch",
+                year: 1893
+            },
+            {
+                titulo: "guernica",
+                autor: "picasso",
+                year: 1937
+            },
+        ];
+        
+        window.onload = function(){
+            const lista = document.getElementById("lista");
+            cuadros.forEach(cuadro => {
+                const e = `
+                    <li>
+                        <h3>${cuadro.titulo}</h3>
+                        <p>${cuadro.autor}</p>
+                        <p>${cuadro.year}</p>
+                    </li>
+                `;
+                lista.innerHTML += e;
+            });
+        }
+    </script>
+</body>
+</html>

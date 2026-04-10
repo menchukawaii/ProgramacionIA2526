@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(nombre, apellido, email,rol){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.email = email;
+                this.rol = rol;
+                this.curso = []
+            }
+
+            addCurso(curso, nivel) {
+                const cursoExistente = this.cursos.find(
+                    c => c.curso == curso & c.nivel == nivel
+                );
+                if (!cursoExistente){
+                    this.cursos.push = {
+                        curso: curso,
+                        nivel: nivel
+                    }
+                }
+                else{
+                    console.log("Error: El curso ya existe");
+                }
+            }
+
+            removeCurso(curso, nivel){
+                const index = this.cursos.findIndex(
+                    c => c.curso == curso & c.nivel == nivel
+                );
+                if (index !== -1){
+                    this.cursos.splice(index, 1);
+                }
+                else{
+                    console.log("Error: El curso no existe");
+                }
+            }
+
+            editCurso(curso, nivel){
+                const index = this.cursos.findIndex(
+                    c => c.curso == curso & c.nivel == nivel
+                );
+                if (index !== -1){
+                    this.cursos[index].nivel = nivel
+                }
+                else{
+                    console.log("Error: El curso ya existe");
+                }
+            }
+
+            enviarMsg(from, mensaje){
+                //???????????????????????????
+            }
+                                                                                                                                                                                                                                                                                                                                               
+        }
+
+        class Estudiante extends User{
+
+        }
+
+        class Profesor extends User{
+
+        }
+    </script>
+</body>
+</html>

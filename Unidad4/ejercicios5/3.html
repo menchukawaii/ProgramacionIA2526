@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Image(titulo, artista, fecha){
+            this.titulo = titulo;
+            this.artista = artista;
+            this.fecha = fecha;
+        }
+
+        function getImage(titulo, artista, fecha){
+            return {
+                titulo : titulo,
+                artista: artista,
+                fecha: fecha
+            }
+        }
+        
+               const cuadros = [
+            {
+                titulo: "mona lisa",
+                autor: "leonardo da vinci",
+                year: 1503
+            },
+            {
+                titulo: "la ultima cena",
+                autor: "leonardo da vinci",
+                year: 1495
+            },
+            {
+                titulo: "noche estrellada",
+                autor: "van gogh",
+                year: 1889
+            },
+            {
+                titulo: "el grito",
+                autor: "edward munch",
+                year: 1893
+            },
+            {
+                titulo: "guernica",
+                autor: "picasso",
+                year: 1937
+            },
+        ];
+
+        const cuadros1 = [
+            new Image(cuadros[0].titulo, cuadros[0].autor , cuadros[0].year),
+            new Image(cuadros[1].titulo, cuadros[1].autor , cuadros[1].year)
+        ];
+
+        const cuadros2 = [
+            getImage(cuadros1[0].titulo, cuadros1[0].artista , cuadros1[0].fecha),
+            getImage(cuadros1[0].titulo, cuadros1[0].artista , cuadros1[0].fecha)
+        ]
+
+        console.table(cuadros2);
+    </script>
+</body>
+</html>

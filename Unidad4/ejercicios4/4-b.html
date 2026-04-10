@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+const datos = [
+    { nombre: "Alberto", edad: 44, educacion: 4, finanzas: 5, sanidad: 6, transporte: 5 },
+    { nombre: "Elena", edad: 44, educacion: 1, finanzas: 8, sanidad: 9, transporte: 8 },
+    { nombre: "Marcos", edad: 22, educacion: 9, finanzas: 3, sanidad: 5, transporte: 7 },
+    { nombre: "Lucía", edad: 35, educacion: 6, finanzas: 6, sanidad: 4, transporte: 4 },
+    { nombre: "Ricardo", edad: 58, educacion: 3, finanzas: 7, sanidad: 8, transporte: 6 },
+    { nombre: "Sofía", edad: 19, educacion: 8, finanzas: 2, sanidad: 7, transporte: 9 },
+    { nombre: "Javier", edad: 41, educacion: 5, finanzas: 5, sanidad: 5, transporte: 5 },
+    { nombre: "Marta", edad: 63, educacion: 2, finanzas: 9, sanidad: 10, transporte: 7 },
+    { nombre: "Diego", edad: 29, educacion: 7, finanzas: 4, sanidad: 3, transporte: 8 },
+    { nombre: "Isabel", edad: 52, educacion: 4, finanzas: 6, sanidad: 7, transporte: 3 }
+];
+
+function obtenerMas50Sanidad5(){
+    const array = datos.filter( p => p.edad > 50 & p.sanidad > 5);
+    array.forEach(e => console.log(e))
+}
+console.log("1. Obtén un nuevo array con las personas que tienen más de 50 años y cuya valoración en sanidad es mayor a 5. Muéstralo por consola utilizando el método forEach")
+obtenerMas50Sanidad5()
+ //============
+
+
+function obtenerValoracionesMasDe5(){
+    const array = datos.filter( p => p.educacion > 5 & p.sanidad > 5);
+    array.forEach(e => console.log(e))
+}
+console.log("2. Obtén un nuevo array con las personas que han valorado la educación y la sanidad por encima de 5 puntos. Muéstralo por consola utilizando el método forEach")
+obtenerValoracionesMasDe5()
+
+
+function obtenerEdadMenorYMayor(){
+    let edades = datos.map(p => p.edad);
+    const setEdades = new Set(edades);
+    const maximo = Math.max(...[...setEdades]);
+}
+
+obtenerEdadMenorYMayor()
+
+</script>
+
+</html>

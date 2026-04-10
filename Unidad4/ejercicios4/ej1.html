@@ -24,11 +24,28 @@
         { nombre: "Pad para Mouse XL", precio: 15, categoria: "Periféricos", stock: 50 }
     ];
 
+    // 1
     function ordenarMayorMenorProductosConStock(productos){
         conStock = productos.filter(p => p.stock > 0);
         ordenado = conStock.sort((a,b) => b.precio - a.precio);
+        return ordenado;
     }
+
+    // 2
+    function aplicarDescuento10(productos){
+        return productos.map(p => ({
+            ...p, //copia el objeto entero
+            precio: p.precio * 0.9
+        }));
+    }
+
+
+
+
+
+
     ordenarMayorMenorProductosConStock(productos)
+    console.log(aplicarDescuento10(productos))
 </script>
 
 </html>
