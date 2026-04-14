@@ -21,7 +21,7 @@
             }
         }
         
-               const cuadros = [
+        const cuadros = [
             {
                 titulo: "mona lisa",
                 autor: "leonardo da vinci",
@@ -54,10 +54,13 @@
             new Image(cuadros[1].titulo, cuadros[1].autor , cuadros[1].year)
         ];
 
+        cuadros.forEach( cuadro => cuadros1.push(new Image(cuadro.titulo, cuadro.autor, cuadro.year)) );
+
         const cuadros2 = [
             getImage(cuadros1[0].titulo, cuadros1[0].artista , cuadros1[0].fecha),
             getImage(cuadros1[0].titulo, cuadros1[0].artista , cuadros1[0].fecha)
         ]
+        
 
         console.table(cuadros2);
     </script>

@@ -29,7 +29,31 @@
         }
 
         class MotorBusqueda{
+            constructor(recursos){
+                this.recursos = recursos;
+            }
 
+            puntuar(recurso, alumno){
+                let puntuacion = 0;
+
+                if (alumno.intereses.includes(recurso.tema)) puntuacion += 3;
+                if (recurso.nivel === alumno.nivel) puntuacion += 2;
+                if (!alumno.historial.includes(recurso.id)) puntuacion += 1; else puntuacion -= 5;
+
+                return puntuacion;
+            }
+
+            recomendar(alumno) {
+                const evaluados = this.recursos.map(recurso => {
+                    return {
+                        ...recurso,
+                        puntuacion: this.puntuarRecurso(recurso, alumno)
+                    };
+                });
+
+                evaluados.sort((a, b) => b.puntuacion - a.puntuacion);
+                return evaluados[0];
+            }
         }
 
         return 
