@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Maestro: HTML5 y CSS</title>
+    <link rel="stylesheet" href="repaso.css">
+</head>
+<body>
+
+    <header>
+        <h1>Manual de Lenguajes de Marcas y Estilos</h1>
+        <p>Fundamentos de HTML5 y CSS para Inteligencia Artificial</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#html-teoria">Teoría HTML</a></li>
+            <li><a href="#tablas">Tablas Avanzadas</a></li>
+            <li><a href="#css-selectores">Selectores CSS</a></li>
+            <li><a href="#box-model">Modelo de Caja</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="html-teoria">
+            <h2>1. Clasificación de Lenguajes de Marcas</h2>
+            <p>Un lenguaje de marcas codifica un documento añadiendo etiquetas que aportan estructura o presentación.</p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Estructurales</h3>
+                    <p>Definen la organización (Ej: <strong>HTML, XML</strong>).</p>
+                </div>
+                <div class="card">
+                    <h3>Presentación</h3>
+                    <p>Controlan la apariencia (Ej: <strong>CSS</strong>).</p>
+                </div>
+                <div class="card">
+                    <h3>Intercambio de Datos</h3>
+                    <p>Transmiten información estructurada (Ej: <strong>JSON, CSV, YAML</strong>).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tablas">
+            <h2>2. Estructura de Tablas Avanzadas</h2>
+            <p>Uso de <code>colspan</code> (unir columnas) y <code>rowspan</code> (unir filas):</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Concepto</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Atributos de Celda</td>
+                        <td>Colspan</td>
+                        <td>Extiende horizontalmente</td>
+                    </tr>
+                    <tr>
+                        <td>Rowspan</td>
+                        <td>Extiende verticalmente</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center; background: #eee;">Fila combinada con Colspan 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="css-selectores">
+            <h2>3. Selectores y Cascada</h2>
+            <p>La <strong>Cascada</strong> permite que los hijos hereden del padre, pero con capacidad de sobrescritura.</p>
+            
+            <article class="info-box">
+                <h3>Selectores de Atributo (Complemento)</h3>
+                <ul>
+                    <li><code>[attr^="val"]</code>: Empieza por "val".</li>
+                    <li><code>[attr$="val"]</code>: Termina en "val".</li>
+                    <li><code>[attr*="val"]</code>: Contiene "val".</li>
+                </ul>
+            </article>
+
+            <article class="info-box">
+                <h3>Pseudoclases y Pseudoelementos</h3>
+                <p>Elementos dinámicos como <code>:hover</code> (al pasar el ratón) o <code>::first-letter</code> (primera letra).</p>
+                <p class="resaltado">Esta frase tiene un pseudoelemento en la primera letra.</p>
+            </article>
+        </section>
+
+        <section id="box-model">
+            <h2>4. El Modelo de Caja (Box Model)</h2>
+            <div class="box-container">
+                <div class="margin-label">Margen (Exterior)</div>
+                <div class="border-box">
+                    <div class="padding-box">
+                        <div class="content-box">
+                            Contenido (Content)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="nota"><strong>Importante:</strong> <code>box-sizing: border-box;</code> hace que el ancho incluya el padding y el borde.</p>
+        </section>
+
+        <section id="microdatos">
+            <h2>5. Web Semántica (Microdatos)</h2>
+            <p>Ayudan a buscadores (Google) a entender el contenido.</p>
+            <div itemscope itemtype="http://schema.org/Person" class="card">
+                <span itemprop="name"><b>Nombre:</b> Juan Pérez</span><br>
+                <span itemprop="jobTitle"><b>Cargo:</b> Experto en IA</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Material de Estudio - IA 2024</p>
+    </footer>
+
+</body>
+</html>

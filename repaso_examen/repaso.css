@@ -1,0 +1,132 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Explicado en PDF CSS: evita que el padding sume al ancho total */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    padding: 20px;
+}
+
+/* --- CABECERA Y NAVEGACIÓN --- */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+nav {
+    background: #34495e;
+    padding: 10px;
+    position: sticky; /* Se queda pegado arriba al hacer scroll */
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #1abc9c;
+    border-radius: 5px;
+}
+
+/* --- SECCIONES Y TARJETAS --- */
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2980b9;
+    border-bottom: 3px solid #2980b9;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+/* --- ESTILOS DE TABLAS (Del PDF Marcas) --- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* --- MODELO DE CAJA VISUAL --- */
+.box-container {
+    background: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.border-box {
+    border: 4px solid #2c3e50;
+    display: inline-block;
+}
+
+.padding-box {
+    padding: 30px;
+    background: #bdc3c7;
+}
+
+.content-box {
+    background: #1abc9c;
+    color: white;
+    padding: 20px;
+}
+
+/* --- PSEUDOELEMENTOS (Del PDF CSS) --- */
+.resaltado::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e74c3c;
+    float: left;
+    margin-right: 5px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    nav ul { flex-direction: column; text-align: center; }
+}

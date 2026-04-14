@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
         class User {
             constructor(nombre, apellido, email,rol){
@@ -67,6 +68,25 @@
                                                                                                                                                                                                                                                                                                                                                
         }
 
+
+        class UsuarioExtendido extends User{
+            constructor(nombre, apellido, email, rol) {
+                super(nombre, apellido, email, rol); // Definimos el rol automáticamente
+            }
+
+            setNombreCompleto(nombreCompleto){
+                nombreCompleto = nombreCompleto.split(" ");
+                this.nombre = nombreCompleto[0];
+                this.apellido = nombreCompleto[1];
+            }
+
+            getNombreCompleto(){
+                return `${this.nombre} ${this.apellido}`;
+            }
+        }
+
+            
+        
     class Estudiante extends User {
         constructor(nombre, apellido, email) {
             super(nombre, apellido, email, "Estudiante"); // Definimos el rol automáticamente
@@ -78,47 +98,6 @@
             super(nombre, apellido, email, "Profesor");
         }
     }
-
-// 1. Creación de Objetos (Instancias)
-const alumno = new Estudiante("Carlos", "Sánchez", "carlos@test.com");
-const profesor = new Profesor("Ana", "Martínez", "ana@test.com");
-
-console.log("--- 🧪 TEST 1: Creación de Usuarios ---");
-console.log(alumno);
-console.log(profesor);
-
-// 2. Probar addCurso (Agregar Cursos)
-console.log("\n--- 🧪 TEST 2: Gestión de Cursos ---");
-alumno.addCurso("JavaScript", "Inicial");
-alumno.addCurso("React", "Intermedio");
-// Intentar agregar un duplicado (debería dar error en consola)
-alumno.addCurso("JavaScript", "Inicial"); 
-
-// 3. Probar editCurso (Editar Nivel)
-console.log("\n--- 🧪 TEST 3: Editar Curso ---");
-// Cambiamos el nivel de JavaScript de 'Inicial' a 'Avanzado'
-alumno.editCurso("JavaScript", "Avanzado");
-console.log("Cursos de Carlos tras editar:", alumno.cursos);
-
-// 4. Probar enviarMsg y mostrarMensajes
-console.log("\n--- 🧪 TEST 4: Mensajería ---");
-const confirmacion = profesor.enviarMsg(
-    profesor.nombre, 
-    alumno.nombre, 
-    "Bienvenido al curso de JS"
-);
-console.log(confirmacion);
-
-profesor.enviarMsg("Sistema", profesor.nombre, "Tienes un nuevo examen pendiente");
-profesor.mostrarMensajes(); // Debería mostrar una tabla con 2 mensajes
-
-// 5. Probar removeCurso (Eliminar)
-console.log("\n--- 🧪 TEST 5: Eliminar Curso ---");
-alumno.removeCurso("React", "Intermedio");
-console.log("Cursos de Carlos tras eliminar React:", alumno.cursos);
-
-// Intentar eliminar algo que no existe
-alumno.removeCurso("Cocina", "Básico");
     </script>
 </body>
 </html>
